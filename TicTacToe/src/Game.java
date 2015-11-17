@@ -3,7 +3,7 @@ interface Game {
 
 	public void init();
 	public void changePlayer();
-	public String checkWin(Board b);
+//	public boolean checkWin(Board b);
 	
 	
 	
