@@ -1,28 +1,34 @@
 
- public class TicTacToeGame implements Game{
+public class TicTacToeGame implements Game{
 
-	 Board b;
-	 
-	@Override
+	Board b;
+
+	/**
+	 * Starts New Game
+	 * Opens new Board and starts the Game
+	 */
 	public void init() {
-		// TODO Auto-generated method stub
-		 b=new Board();
+		b=new Board();
 	}
 
-	@Override
+	/**
+	 * Changes turns
+	 */
 	public void changePlayer() {
-		// TODO Auto-generated method stub
-		
 		
 	}
 
-	@Override
+	/**
+	 * Checks who wins
+	 * It will work after every player's turn until the end
+	 * Will be operated after 3 turns-  
+	 */
 	public String checkWin(Board b) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
