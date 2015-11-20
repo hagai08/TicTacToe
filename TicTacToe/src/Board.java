@@ -18,10 +18,10 @@ public class Board {
 		}
 	}
 	
-	protected void printBoard(Board b){
+	protected void printBoard(){
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board.length; j++) {
-				System.out.print(b.getCell(i, j)+" ,");
+				System.out.print(board[i][j]+" ,");
 			}
 			System.out.println();	
 		}
