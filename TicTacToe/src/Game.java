@@ -1,21 +1,17 @@
-/*
+
 interface Game {
 
-	public void init();
-	public void changePlayer();
+	//need to discuss about SW architecture with Osher
+	
+	
+//	public void init();
+	public void playGame();
+//	public void changePlayer();
 //	public boolean checkWin(Board b);
 	
 	
 	
 	
-	
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		System.out.println("check");
-
-	}
 
 }
-*/
+
