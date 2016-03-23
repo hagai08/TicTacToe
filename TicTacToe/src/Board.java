@@ -1,8 +1,8 @@
 
 public class Board {
 
-	char[][] board;
-	int length;
+	private char[][] board;
+	private int length;
 
 	
 	protected Board(){
@@ -14,6 +14,19 @@ public class Board {
 		}
 		length=3;
 	}
+	
+	
+	protected Board(char[][] c){
+		board = new char[3][3];
+		for (int i = 0; i < c.length; i++) {
+			for (int j = 0; j < c.length; j++) {
+				board[i][j] = c[i][j];
+			}
+		}
+		length=3;
+	}
+	
+	
 	
 	protected boolean isUsed(int p, int q){
 		
@@ -28,6 +41,7 @@ public class Board {
 	}
 
 	protected void printBoard(){
+		
 		for (int i = 0; i < board.length; i++) {
 			for (int j = 0; j < board.length; j++) {
 				if ( j == board.length-1){
@@ -52,6 +66,10 @@ public class Board {
 	 */
 	protected void setPlay(int x, int y, char c) {
 		board[x][y] = c;		
+	}
+	
+	protected int getBoardLength(){
+		return length;
 	}
 
 

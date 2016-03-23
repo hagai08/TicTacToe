@@ -9,6 +9,14 @@ public class IO {
 	int turnNum;
 	
 	
+	protected IO(){
+		c='x';		
+	}
+	
+	protected IO(char c) {
+		this.c = c;
+	}
+	
 	protected int getP() {
 		return p;
 	}
@@ -17,9 +25,12 @@ public class IO {
 		return q;
 	}
 
-	protected IO(){
-		c='x';		
+	protected void setPQ(int p, int q){
+		this.p=p;
+		this.q=q;
 	}
+	
+
 	
 	//need to check input- out of board bounds
 	protected void getInput(int i){
@@ -34,17 +45,9 @@ public class IO {
 		
 	}
 	
-	protected void setPQ(int p, int q){
-		this.p=p;
-		this.q=q;
-	}
+
 	
 	
-	
-	
-	protected IO(char c) {
-		this.c = c;
-	}
 	
 	protected void printOutput(String out) {
 		System.out.println(out);
@@ -76,87 +79,6 @@ public class IO {
 		if (ch =='y') this.c='x';
 	}
 
-	
-	
-	/**
-	 * Checks who wins
-	 * It will work after every player's turn until the end
-	 * Will be operated after 3 turns-  
-	 */
-	/*i'v changed type checkWin function
-	 * 
-	 * maybe i can check win with one run on the matrix-4 counters.
-	 * 
-	 *maybe return value need to be  : win lose or tie.
-	 */
-	public boolean checkWin(Board b, char c) {
-		
-		int count=0;
-		
-		for (int i = 0; i < b.length; i++) {//check latitude
-			for (int j = 0; j < b.length; j++) {
-				if (b.getCell(i, j) == c){
-					count++;
-				}
-			}
-			if (count == b.length) {
-				System.out.println("player "+c+ " wins!"+" at line "+i);
-				return true;
-			}
-			count=0;
-		}
-		
-		for (int i = 0; i < b.length; i++) {//check longitude
-			for (int j = 0; j < b.length; j++) {
-				if (b.getCell(j, i) == c){
-					count++;
-				}
-			}
-			if (count == b.length) {
-				System.out.println("player "+c+ " wins!"+" at column "+i);
-				return true;
-			}
-			count=0;
-		}
-		
-		count=0;
-		for (int i = 0; i < b.length; i++) {//check primary diagonal
-			if (b.getCell(i, i) == c){
-				count++;
-			}		
-		}
-		if (count == b.length){
-			System.out.println("player "+c+ " wins! primary diagonal!");
-			return true;
-		}
-		
-		
-		count=0;
-		int j=b.length-1;
-		for (int i = 0; i < b.length; i++) {//check secondary diagonal- ne			
-			char arrChar=b.getCell(i, j);
-			if (arrChar == c){
-					count++;
-			}		
-			j--;	
-		}
-		
-		
-		if (count == b.length){
-			System.out.println("player "+c+ " wins! secondary diagonal!");
-			return true;
-		}
-		
-		return false;
 
-	}
-
-
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }
